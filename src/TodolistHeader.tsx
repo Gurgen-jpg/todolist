@@ -1,12 +1,16 @@
 import React from 'react';
+import AddTask from "./AddTask";
 
 type TodolistHeaderPropsType = {
-    title:string
+    title: string
 }
 
 const TodolistHeader = (props: TodolistHeaderPropsType) => {
     return (
-        <h3>{props.title}</h3>
+        <div>
+            <h3>{props.title}</h3>
+            <AddTask/>
+        </div>
     );
 };
 
