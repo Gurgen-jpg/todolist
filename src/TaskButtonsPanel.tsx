@@ -6,11 +6,15 @@ type TaskButtonsPanelType = {
 }
 
 const TaskButtonsPanel = (props: TaskButtonsPanelType) => {
+    const onClickHandler = (filter: FilterValuesType) => () => {
+      props.changeFilter(filter)
+    }
+
     return (
         <div>
-            <button onClick={() => props.changeFilter("all")}>All</button>
-            <button onClick={() => props.changeFilter("active")}>Active</button>
-            <button onClick={() => props.changeFilter("completed")}>Completed</button>
+            <button onClick={onClickHandler("all")}>All</button>
+            <button onClick={onClickHandler("active")}>Active</button>
+            <button onClick={onClickHandler("completed")}>Completed</button>
         </div>
     );
 };

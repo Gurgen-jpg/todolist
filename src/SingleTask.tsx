@@ -3,7 +3,7 @@ import {TaskType} from "./Todolist";
 
 
 type SingleTaskPropsType = TaskType & {
-    removeTask:  (id: number)=> void
+    removeTask:  (id: string)=> void
 
 }
 
