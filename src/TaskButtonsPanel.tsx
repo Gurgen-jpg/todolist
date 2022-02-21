@@ -3,6 +3,7 @@ import {FilterValuesType} from "./App";
 
 type TaskButtonsPanelType = {
     changeFilter: (filter: FilterValuesType) =>void
+    filter: FilterValuesType
 }
 
 const TaskButtonsPanel = (props: TaskButtonsPanelType) => {
@@ -12,9 +13,15 @@ const TaskButtonsPanel = (props: TaskButtonsPanelType) => {
 
     return (
         <div>
-            <button onClick={onClickHandler("all")}>All</button>
-            <button onClick={onClickHandler("active")}>Active</button>
-            <button onClick={onClickHandler("completed")}>Completed</button>
+            <button
+                className={props.filter ==='all' ? 'button-active' : ''}
+                onClick={onClickHandler("all")}>All</button>
+            <button
+                className={props.filter ==='active' ? 'button-active' : ''}
+                onClick={onClickHandler("active")}>Active</button>
+            <button
+                className={props.filter ==='completed' ? 'button-active' : ''}
+                onClick={onClickHandler("completed")}>Completed</button>
         </div>
     );
 };

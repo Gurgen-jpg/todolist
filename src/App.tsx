@@ -10,7 +10,7 @@ function App() {
     console.log((v1))
 
     const [tasks, setTasks] = useState<Array<TaskType>>([
-        {id: v1(), title: 'HTML', isDone: true},
+        {id: v1(), title: 'HTML', isDone: true },
         {id: v1(), title: 'CSS', isDone: true},
         {id: v1(), title: 'JS', isDone: false},
         {id: v1(), title: 'JS', isDone: false},
@@ -32,6 +32,9 @@ function App() {
          //содали копию массива и обновили стейт
          const updatedTasks = [newTask, ...tasks]*/
         setTasks([{id: v1(), title: title, isDone: false},...tasks])
+    }
+    const changeTaskStatus = (taskID: string, isDone: boolean) => {
+        setTasks((tasks.map((t => t.id === taskID ? {...t, isDone: !t.isDone} : t ))))
     }
 
     // фильтрация задачи
@@ -61,6 +64,8 @@ function App() {
                 removeTask={removeTask}
                 changeFilter={changeFilter}
                 addTask={addTask}
+                filter={filter}
+                changeTaskStatus={changeTaskStatus}
             />
         </div>
     );

@@ -6,3 +6,20 @@
 .App > div {
   margin-right: 50px;
 }
+
+
+/*Taska*/
+.task-completed {
+  opacity: 0.5;
+}
+
+/* подсветка кнопки*/
+.button-active {
+  color: white;
+  background-color: darkgreen;
+}
+
+.error {
+  outline: none;
+  border: 2px solid red;
+}
