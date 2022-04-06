@@ -1,6 +1,5 @@
 import React, {ChangeEvent, useState, KeyboardEvent} from 'react';
-import {IconButton, TextField} from "@material-ui/core";
-import {AddCircleOutline} from "@material-ui/icons";
+
 
 type PropTypes = {
     callBack: (title: string) => void
@@ -34,7 +33,7 @@ export const AddItem = (props: PropTypes) => {
 
     return (
         <div>
-            <TextField
+            {/*<EditableSpan
                 label="Title"
                 variant="outlined"
                 value={title}
@@ -44,12 +43,12 @@ export const AddItem = (props: PropTypes) => {
                 // className={error ? "error" : ""}
                 error={!!error}
                 helperText={!!error&& 'Enter some text'}
-            />
-            <IconButton onClick={addTask} size={'small'}>
+            />*/}
+           {/* <IconButton onClick={addTask} size={'small'}>
                 <AddCircleOutline color={'primary'}/>
-            </IconButton>
-            {/*<button onClick={addTask}>+</button>*/}
-            {/*{error && <div className="error-message">{error}</div>}*/}
+            </IconButton>*/}
+            <button onClick={addTask}>+</button>
+            {error && <div className="error-message">{error}</div>}
         </div>
     );
 };

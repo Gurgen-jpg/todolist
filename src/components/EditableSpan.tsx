@@ -1,5 +1,5 @@
-import React, {useState, KeyboardEvent,FocusEvent, MouseEvent, ChangeEvent} from 'react';
-import {Box, TextField} from "@material-ui/core";
+import React, {useState, KeyboardEvent, ChangeEvent} from 'react';
+
 
 type EditableSpanProps = {
     oldTitle: string
@@ -27,7 +27,7 @@ const EditableSpan = (props: EditableSpanProps) => {
 
     return (
         edit
-            ? <TextField onChange={onChangeHandler} autoFocus onBlur={doubleClickHandler} onKeyPress={onKeyPressHandler} type="text" value={editTitle}/>
+            ? <input onChange={onChangeHandler} autoFocus onBlur={doubleClickHandler} onKeyPress={onKeyPressHandler} type="text" value={editTitle}/>
             : <span onDoubleClick={doubleClickHandler}>{props.oldTitle}</span>
     );
 };
